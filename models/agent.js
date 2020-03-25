@@ -20,6 +20,11 @@ const agent = (sequelize, DataTypes) => {
                 isEmail: true
             }
         },
+
+        phoneNumber: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -30,7 +35,7 @@ const agent = (sequelize, DataTypes) => {
         },
 
         address: {
-            type: DataTypes.Text,
+            type: DataTypes.TEXT,
             allowNull: false
         },
 
@@ -40,8 +45,8 @@ const agent = (sequelize, DataTypes) => {
 
         verified: {
             type: DataTypes.ENUM,
-            values: [true, false],
-            defaultValue: false
+            values: ["true", "false"],
+            defaultValue: "false"
 
         }
     });
@@ -62,7 +67,7 @@ const agent = (sequelize, DataTypes) => {
         return agent;
     };
 
-    Agent.beforeCreated(async agent => {
+    Agent.beforeCreate(async agent => {
         agent.password = await agent.generatePasswordHash();
     });
 
