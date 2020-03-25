@@ -1,9 +1,11 @@
 import {gql} from 'apollo-server-express';
 
 export default gql`
+scalar Date 
+
     extend type Query{
         me: Agent
-        agent(id: ID!); Agent
+        agent(id: ID!): Agent
         agents: [Agent!]
     }
 
@@ -11,11 +13,11 @@ export default gql`
         signUp(
             name: String!
             email: String!
-            phoneNumber: Integer!
+            phoneNumber: String!
             address: String!
             zipCode: String!
             password: String!
-            verified: Boolean!
+            verified: Boolean
         ) : Token!
 
         signIn(email: String!, password: String!) : Token!
@@ -30,9 +32,11 @@ export default gql`
         id: ID!
         name: String!
         email: String!
-        phoneNumber: Integer!
+        phoneNumber: String!
         address: String!
         zipCode: String!
         verified: Boolean!
+        createdAt: Date!
+        files: [File!]
     }
 `;

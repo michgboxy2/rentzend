@@ -8,12 +8,13 @@ export default gql`
     }
 
     extend type Mutation {
-        Upload(file: Upload!): File!
+        singleUpload(file: Upload!): File!
     }
 
     type File {
         filename: String!
         mimetype: String!
         encoding: String!
+        agent: Agent!
       }
 `;

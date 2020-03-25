@@ -2,8 +2,8 @@ import jwt from 'jsonwebtoken';
 import { UserInputError } from 'apollo-server';
 
 
-const createToken = async (user, secret, expiresIn) => {
-    const {id} = user;
+const createToken = async (agent, secret, expiresIn) => {
+    const {id} = agent;
     return await jwt.sign({id}, secret, {expiresIn});
 }
 
@@ -35,7 +35,7 @@ export default {
                 address,
                 zipCode,
                 password,
-                verified: false
+                verified: "false"
             });
 
             return {token: createToken(agent, secret, '120m')};
