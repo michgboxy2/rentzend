@@ -23,6 +23,7 @@ app.use((err, req, res, next) => {
 	next();
 });
 
+app.use(express.static(__dirname + '/build'));
 
 const getMe = async req => {
     const token = req.headers['x-token'];
