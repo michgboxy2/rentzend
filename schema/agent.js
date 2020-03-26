@@ -17,7 +17,7 @@ scalar Date
             address: String!
             zipCode: String!
             password: String!
-            verified: Boolean
+            verified: String
         ) : Token!
 
         signIn(email: String!, password: String!) : Token!
@@ -26,6 +26,7 @@ scalar Date
 
     type Token {
         token: String!
+        verified: String
     }
 
     type Agent {

@@ -22,7 +22,7 @@ const agent = (sequelize, DataTypes) => {
         },
 
         phoneNumber: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         password: {

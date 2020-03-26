@@ -12,12 +12,12 @@ export default {
     Query: {
         me: async (parent, args, {models, me}) => {
             if(!me){ return null}
-
-            return await models.Agent.findByPK(me.id);
+            
+            return await models.Agent.findByPk(me.id);
         },
 
         agent: async (parent, {id}, {models}) => {
-            return await models.Agent.findByPK(id);
+            return await models.Agent.findByPk(id);
         },
 
         agents: async (parent, args, {models}) => {
@@ -38,7 +38,7 @@ export default {
                 verified: "false"
             });
 
-            return {token: createToken(agent, secret, '120m')};
+            return {token: createToken(agent, secret, '120m'), verified: agent.verified};
         },
 
         signIn: async (parent, {email, password}, {models, secret}) => {

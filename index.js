@@ -66,7 +66,7 @@ server.applyMiddleware({app, path: '/graphql'});
 
 const httpServer = http.createServer(app);
 
-
+const eraseDatabaseOnSync = true;
 
 sequelize.sync().then(async () => {
     httpServer.listen(PORT, () => {
