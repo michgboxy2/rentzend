@@ -1,3 +1,14 @@
-you can start the server with "npm start"
+run "npm install"
 
-express server the client side build on "127.0.0.1:5000"
+start the server with "npm start"
+
+server is available on 127.0.0.1:5000/graphql and client side build on 127.0.0.1:5000
+
+
+//React Client//
+cd rentzend-client
+run yarn add
+
+run yarn start to start react server
+
+run yarn test to run test suite
