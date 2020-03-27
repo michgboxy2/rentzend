@@ -32,7 +32,10 @@ const authLink = setContext((_, { headers }) => {
 console.log(sessionStorage.getItem('token'));
 
 
-const cache = new InMemoryCache();
+const cache = new InMemoryCache({
+  dataIdFromObject: o => o.id //identify a piece of data for refetching. tracks records fetched from the server 
+
+});
 
 const client = new ApolloClient({
     link: authLink.concat(httpLink),
@@ -40,7 +43,7 @@ const client = new ApolloClient({
     headers: {
         "x-token": sessionStorage.getItem('token'),
       },
-	dataIdFromObject: o => o.id //identify a piece of data for refetching. tracks records fetched from the server 
+	
 });
 
 ReactDOM.render(

@@ -52,7 +52,7 @@ const Signin = (props) => {
 
     return (
         <div>
-            <h1>Login</h1>
+            <h1>Agent Signin</h1>
             <Formik
                 initialValues={initialValues}
                 onSubmit={handleSubmit}
@@ -65,7 +65,7 @@ const Signin = (props) => {
 
                             <FormikField label="password" name="password" type="password"/>
                             
-                             <Button variant="contained" color="primary" disabled={!dirty} type="submit">Primary </Button>
+                             <Button variant="contained" color="primary" disabled={!dirty} type="submit">Login </Button>
 
                         </Form>
                     )
@@ -83,6 +83,7 @@ const mutation = gql`
                   }
         }
 `;
+
 
 export default graphql(mutation)(Signin);
 

@@ -88,7 +88,7 @@ const Signup = (props) => {
                         
 
                             {/* <button disabled={!dirty} type="submit">submit</button> */}
-                             <Button variant="contained" color="primary" disabled={!dirty} type="submit">Primary </Button>
+                             <Button variant="contained" color="primary" disabled={!dirty} type="submit">Register </Button>
 
                         </Form>
                     )

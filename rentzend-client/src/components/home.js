@@ -13,6 +13,8 @@ const Home = (props) => {
 
    const {loading, error, me} = props.data;
 
+   props.data.refetch();
+
 
    if(!token){ props.history.push('/login')}
 
